@@ -1,0 +1,154 @@
+main.info--main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+main.info--main::after {
+  content: "";
+  display: block;
+  position: fixed;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 10%, black 100%);
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+main.info--main .bg-img {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: -1;
+  filter: blur(10px);
+}
+main.info--main .skeletal-rest {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  justify-content: flex-end;
+  overflow: unset;
+}
+main.info--main .skeletal-rest .skeleton.txt {
+  height: 0.6rem;
+  width: 150%;
+  border-radius: 1em;
+}
+main.info--main .skeletal-rest div.details {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 6vw;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding-top: 10vh;
+}
+main.info--main .skeletal-rest div.details > div {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+  flex-basis: 100%;
+}
+main.info--main .skeletal-rest div.details > div:nth-child(2) {
+  gap: 2rem;
+  justify-content: space-around;
+  width: 100%;
+  flex-wrap: wrap;
+}
+main.info--main .skeletal-rest div.details img {
+  display: block;
+  width: 25%;
+  aspect-ratio: 2/3;
+  z-index: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  border-radius: 1em;
+}
+main.info--main .skeletal-rest div.details .title {
+  height: 3vw;
+  width: 100%;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+main.info--main .skeletal-rest div.details .title::before {
+  content: "";
+  background-color: #a9a9a9;
+  width: 75%;
+  height: 2vw;
+  display: block;
+  top: -3vw;
+  position: absolute;
+  animation: skeleton-loading 0.7s linear infinite reverse;
+  border-radius: 2rem;
+}
+main.info--main .skeletal-rest div.details small {
+  color: wheat;
+}
+main.info--main .skeletal-rest div.details article {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 65%;
+}
+main.info--main .skeletal-rest div.details article p {
+  color: #a9a9a9;
+  font-size: 1.1rem;
+}
+main.info--main .rest {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  justify-content: flex-end;
+  overflow: unset;
+}
+main.info--main .rest div.details {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 6vw;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding-top: 10vh;
+}
+main.info--main .rest div.details > div {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+  flex-basis: 100%;
+}
+main.info--main .rest div.details > div:nth-child(2) {
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+}
+main.info--main .rest div.details img {
+  display: block;
+  width: 25%;
+  z-index: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  border-radius: 1em;
+}
+main.info--main .rest div.details .title {
+  font-size: max(1.8rem, 5vw);
+  line-height: 1.2em;
+}
+main.info--main .rest div.details small {
+  color: wheat;
+}
+main.info--main .rest div.details article p {
+  color: #a9a9a9;
+  font-size: 1.1rem;
+}/*# sourceMappingURL=Info.css.map */

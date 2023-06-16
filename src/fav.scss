@@ -1,0 +1,189 @@
+.favorite-container{
+    display: flex;
+    // align-items: stretch;
+    flex-shrink: 0;
+    background-color: lighten(#b380dd, 25%);
+    border-radius: .6rem;
+    overflow-x: hidden;
+    position: relative;
+
+    & > button{
+        position: absolute;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        width: 100px;
+        inset: 0;
+        background-color: unset;
+        font-weight: bolder;
+
+        &:hover{
+            background-color: lighten(wheat, 10%);
+        }
+        a{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            text-align: center;
+            text-transform: uppercase;
+            text-decoration: none;
+            line-height: 1.1em;
+            background-color: unset;
+            font-weight: bold;
+            color: #333;
+        }
+    }
+}
+
+
+.favorite-card{
+    background-color: darken(#b380dd, 47%);
+    padding: .4em;
+    display: flex;
+    width: 100%;
+    z-index: 5;
+    // grid-template-columns: 20% 1fr 1fr;
+    // grid-template-rows: 1fr;
+    gap: .5rem;
+    // border-radius: .5rem;
+    // animation: slideUp 150ms cubic-bezier(0.175, 0.885, 0.32, 1.275) alternate;
+    transition: transform 250ms cubic-bezier(0.215, 0.610, 0.355, 1);
+    &.show{
+        transform: translate(100px);
+    }
+    
+    &:hover{
+        background-color: darken(#b380dd, 30%);
+        cursor: pointer;
+    }
+    
+    img{
+        width: 20%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+        aspect-ratio: 1 / 1.5;
+        border-radius: .3rem;
+    }
+    
+    button{
+        background-color: darken(#b380dd, 52%);
+        color: #f1f1f1;
+        outline: 0;
+        border-radius: .4rem;
+        cursor: pointer;
+        width: 50px;
+
+        &:hover{
+            background-color: lighten(red, 20%);
+        }
+    }
+    
+    
+    div.fav_details{
+        display: flex;
+        flex-direction: column;
+        flex-basis: 100%;
+        width: 100%;
+        // background-color: #fff;
+        // overflow: hidden;
+
+        .genre{
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            overflow: hidden;
+            -webkit-box-orient: vertical;    
+        }
+        .type{
+            text-transform: uppercase;
+            color: wheat;
+        }
+        .title{  
+            color: #fff;
+            font-weight: 500;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+            -webkit-box-orient: vertical;
+        }
+    }
+}
+
+@keyframes slideUp {
+    0%{
+        opacity: 0;
+        transform: translateY(3rem); 
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0); 
+    }
+}
+
+.skeleton
+{
+    opacity: .5;
+    animation: skeleton-loading .7s linear infinite reverse;
+    
+    @keyframes skeleton-loading {       
+        0%{
+            background-color: #f1f1f1;
+        }
+        100%{
+            background-color: #777;
+            
+        }
+    }
+}
+
+.favorite-skeleton{
+    background-color: #333;
+    padding: .4em;
+    display: grid;
+    grid-template-columns: 20% 1fr;
+    gap: .5rem;
+    border-radius: .5rem;
+    animation: slideUp 150ms cubic-bezier(0.175, 0.885, 0.32, 1.275) ;
+    
+    img{
+        width: 100%;
+        display: block;
+        aspect-ratio: 1 / 1.5;
+        object-fit: cover;
+        border-radius: .3rem;
+        border: 0;
+        background-color: #a1a1a1;
+    }
+
+    
+    div.fav_details{
+        display: flex;
+        flex-direction: column;
+        gap: .6rem;
+        .genre{
+            height: .6rem;
+            border-radius: 1rem;
+            background-color: #a1a1a1;
+            width: 45%;
+        }
+        .type{
+            height: .6rem;
+            border-radius: 1rem;
+            background-color: wheat;
+            width: 25%;
+        }
+        .title{  
+            height: .6rem;
+            border-radius: 1rem;
+            background-color: #fff;
+            width: 75%;
+        }
+        .year{  
+            height: .6rem;
+            border-radius: 1rem;
+            background-color: #a1a1a1;
+            width: 20%;
+        }
+    }
+}

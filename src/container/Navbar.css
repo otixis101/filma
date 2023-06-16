@@ -1,0 +1,36 @@
+nav.info--nav {
+  padding: 3vh 2vw;
+  background: linear-gradient(3600deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 15%, black 90%);
+  color: #f1f1f1;
+}
+nav.info--nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+nav.info--nav ul li button {
+  background-color: unset;
+  outline: 0;
+  color: inherit;
+  font-size: 1.2rem;
+}
+nav.info--nav ul li button a {
+  color: inherit;
+  text-decoration: none;
+  gap: 0.5em;
+  align-items: center;
+  display: flex;
+  transition: all 200ms ease-in-out;
+}
+nav.info--nav ul li button a:hover {
+  color: wheat;
+  letter-spacing: 0.2em;
+}
+nav.info--nav ul li .logo-title {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0;
+}/*# sourceMappingURL=Navbar.css.map */

@@ -1,0 +1,458 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+:root {
+  --font-roboto: "Roboto Slab", serif;
+  --font-raleway: "Raleway", sans-serif;
+}
+
+body {
+  font-family: "Poppins";
+  background-color: #141414;
+  color: #f0f0f0;
+  font-size: 14px;
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+/* Hide the default scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Style the thumb of the scrollbar */
+::-webkit-scrollbar-thumb {
+  background-color: #bdbdbd;
+  border-radius: 10px;
+}
+
+/* Style the track of the scrollbar */
+::-webkit-scrollbar-track {
+  background-color: #111;
+  border-radius: 10px;
+}
+
+/* Define the size and other properties of the scrollbar */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a1a1a1;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background-color: #999;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: #f1f1f1;
+}
+
+section {
+  display: flex;
+  position: relative;
+  overflow-x: hidden;
+}
+
+aside {
+  padding: 4vw 1.5vw 1.5vw 1.5vw;
+  display: block;
+  height: 100vh;
+  flex-basis: min(400px, 100%);
+  flex-shrink: 0;
+  flex-grow: 1;
+  overflow: hidden;
+  transition: flex-basis 250ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+@media only screen and (max-width: 480px) {
+  aside {
+    flex-basis: min(768px, 100%);
+  }
+}
+aside.close {
+  flex-basis: 0;
+  padding: 4vw 0 2vw;
+}
+aside div.fav-template {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  color: #a1a1a1;
+}
+aside div.fav-template > h3 {
+  white-space: nowrap;
+  padding: 1em;
+}
+aside .fav-container {
+  border-radius: 1em;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 2em 0.6em;
+  gap: 1rem;
+}
+aside div.empty {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  white-space: nowrap;
+  font-weight: bold;
+  flex-basis: 100%;
+  border: 0;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+main.main {
+  padding: 2vw 3vw 2vw 1vw;
+  height: 100vh;
+  display: flex;
+  flex-basis: 100%;
+  align-items: center;
+  flex-direction: column;
+  overflow-y: scroll;
+  position: relative;
+}
+main.main button.fav-toggle {
+  position: absolute;
+  background-color: #b380dd;
+  outline: 0;
+  width: 4rem;
+  font-size: 1.6em;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  left: 10px;
+  cursor: pointer;
+}
+main.main button.fav-toggle i {
+  pointer-events: none;
+}
+main.main button.fav-toggle .count {
+  position: absolute;
+  display: block;
+  line-height: 0.1em;
+  background-color: #ff4d4d;
+  color: #fff;
+  padding: 0.7em 0.5em;
+  border-radius: 50%;
+  font-weight: bolder;
+  font-size: 0.85rem;
+  right: 10px;
+  top: 10px;
+  pointer-events: none;
+}
+main.main button.fav-toggle:hover {
+  background-color: #9b58d2;
+}
+@media only screen and (max-width: 768px) {
+  main.main button.fav-toggle {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    box-shadow: -1px 2px 14px 5px rgba(255, 255, 255, 0.15);
+    z-index: 99;
+  }
+}
+
+.logo-title {
+  font-size: 4ch;
+  letter-spacing: 0.3ch;
+  padding: 1rem;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, rgb(29, 21, 200) 0%, rgb(149, 11, 210) 0%, rgba(24, 255, 80, 0.5) 100%);
+  text-shadow: 4px 4px 10px 10px rgba(0, 0, 0, 0.5);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.search-div {
+  width: min(600px, 100%);
+  display: flex;
+  align-items: center;
+  padding: 0.25rem 2rem 0.25em 0;
+  background: #333333;
+  border-radius: 1rem;
+  outline-offset: -1rem;
+  transition: all 150ms ease;
+}
+
+.search-div:focus-within {
+  outline-offset: 0;
+}
+
+.search-div input {
+  flex-basis: 100%;
+  font-size: 1rem;
+  font-family: var(--font-raleway);
+  font-weight: 500;
+  padding: 1rem 1.2rem;
+  outline: none;
+  background-color: transparent;
+  color: #fafafa;
+}
+
+.search-div input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.15);
+}
+
+.search-div input::placeholder {
+  color: rgba(255, 255, 255, 0.15);
+}
+
+.search-div img {
+  width: 1.2rem;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+}
+
+.search-div button {
+  padding: 1em 1.2em;
+  border: 1px solid #1f1f1f;
+  border-radius: 0.5rem;
+  color: #a1a1a1;
+  font-family: var(--font-raleway);
+  font-weight: 900;
+  letter-spacing: 0.75px;
+  cursor: pointer;
+  background: #1f2123;
+}
+.search-div button:hover {
+  background-color: #f0f0f0;
+}
+
+.filter-div {
+  display: flex;
+  flex-direction: column;
+  width: min(500px, 100%);
+  padding: 2vw 0 0;
+}
+
+.filter-ul {
+  display: flex;
+  gap: 0.3rem;
+  list-style: none;
+  border-radius: 0.3rem;
+  padding: 0.2em;
+}
+.filter-ul li {
+  padding: 0.5em 0;
+  flex-grow: 1;
+  text-align: center;
+  color: #a1a1a1;
+  white-space: none;
+  font-weight: bold;
+}
+.filter-ul li.active {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.filter-ul li.active::after {
+  content: "";
+  position: absolute;
+  height: 0.25em;
+  border-radius: 1rem;
+  background-color: #b380dd;
+  bottom: 0;
+  animation: stretch 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+@keyframes stretch {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+.filter-ul li:hover {
+  cursor: pointer;
+  color: #b380dd;
+}
+
+.loader-div {
+  width: 100%;
+  flex-basis: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.empty {
+  width: 100%;
+  flex-basis: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+}
+.empty img {
+  width: clamp(200px, 100%, 400px);
+  filter: saturate(1);
+}
+.empty h2 {
+  font-size: 1.35rem;
+  font-weight: bolder;
+  color: #f0f0f0;
+  font-family: var(--font-raleway);
+}
+
+.container {
+  display: grid;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  padding: 2vw 1em;
+  gap: 1rem;
+  width: 100%;
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.movie {
+  aspect-ratio: 1/1.5;
+  position: relative;
+  overflow: hidden;
+  padding: 0.3em;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  animation: slideUp 150ms cubic-bezier(0.175, 0.885, 0.32, 1.275) alternate;
+  /* box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1); */
+}
+.movie .btn-fav {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+.movie div.more-info {
+  display: none;
+}
+.movie:hover div.more-info {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+.movie:hover div.more-info button {
+  height: -moz-fit-content;
+  height: fit-content;
+  border-radius: 0.4em;
+  font-size: 1em;
+  font-weight: normal;
+  cursor: pointer;
+  z-index: 9;
+  border: 1px solid rgba(179, 128, 221, 0.3);
+  background-color: rgba(179, 128, 221, 0.5);
+  color: white;
+  box-shadow: 1px 2px 10px 2px rgba(255, 255, 255, 0.2);
+  outline: 0;
+  padding: 0;
+}
+.movie:hover div.more-info button a, .movie:hover div.more-info button Link {
+  display: block;
+  padding: 1em 2em;
+  text-decoration: none;
+  color: inherit;
+}
+.movie:hover div.more-info button i {
+  line-height: 0em;
+  margin-inline: unset;
+}
+.movie:hover div.more-info button:hover {
+  background-color: rgba(179, 128, 221, 0.4);
+}
+
+.poster {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: all 120ms ease;
+}
+
+.movie div.details {
+  z-index: 2;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.02) 0%, rgba(31, 31, 31, 0.7) 30%, #1f1f1f 100%);
+  padding: 1rem 0.7rem;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  transition: all 250ms ease-in-out;
+}
+.movie div.details span {
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  font-size: 0.6rem;
+  letter-spacing: 2px;
+  font-weight: 500;
+  color: #f9d3b4;
+}
+.movie div.details h3 {
+  color: #f0f0f0;
+  font-size: 1rem;
+  font-weight: 600;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: all 200ms ease-in-out;
+}
+.movie div.details p {
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: bold;
+}
+
+.movie:hover img.poster {
+  filter: blur(5px);
+  height: 100%;
+  opacity: 0.2;
+  scale: 1.2;
+}
+
+.movie:hover div.details {
+  background-color: transparent;
+}
+.movie:hover div.details h3 {
+  -webkit-line-clamp: unset;
+}/*# sourceMappingURL=Home.css.map */
