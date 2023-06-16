@@ -6,7 +6,7 @@ import Navbar from '../container/Navbar'
 import './Info.css'
 
 const API_KEY = process.env.REACT_APP_API_KEY;
-const API_URL = `http://www.omdbapi.com/?apikey=${API_KEY}`;
+const API_URL = `https://www.omdbapi.com/?apikey=${API_KEY}`;
 
 const Info = () => {
   // const movieID = "tt9335498";
