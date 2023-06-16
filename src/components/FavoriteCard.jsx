@@ -7,7 +7,7 @@ import { cardClick } from "./fav_fx";
 
 
 const API_KEY = process.env.REACT_APP_API_KEY;
-const API_URL = `http://www.omdbapi.com/?apikey=${API_KEY}`;
+const API_URL = `https://www.omdbapi.com/?apikey=${API_KEY}`;
 
 
 const FavoriteCard = ({movieID, onLiked}) =>{
