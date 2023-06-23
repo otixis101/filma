@@ -17,7 +17,7 @@ const Info = () => {
 
   const [isFetching, setIsFetching] = useState(true)
 
-  fetch(`${API_URL}&i=${movID}`)
+  fetch(`${API_URL}&i=${movID}&plot=full`)
             .then(res => res.json()).then(data => {
               setIsFetching(false)
                 setMovie(data)
